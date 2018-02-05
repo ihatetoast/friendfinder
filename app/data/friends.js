@@ -1,0 +1,52 @@
+var friendsArr = [
+  {
+    "name":"Steve",
+    "photo":"http://pixel.nymag.com/imgs/daily/vulture/2015/03/23/24-buscemi.w529.h529.jpg",
+    "scores":[
+        5,
+        1,
+        4,
+        4,
+        5,
+        1,
+        2,
+        5,
+        4,
+        1
+      ]
+  },
+  {
+    "name":"Katy",
+    "photo":"https://pbs.twimg.com/media/CZFoXtoVIAEgChI.jpg",
+    "scores":[
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+  },
+  {
+    "name":"George",
+    "photo":"https://www.instagram.com/p/Bd5KUJyBPtH/",
+    "scores":[
+        1,
+        5,
+        1,
+        5,
+        1,
+        2,
+        4,
+        2,
+        4,
+        2
+      ]
+  }
+
+];
+module.exports = friendsArr;
