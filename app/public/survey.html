@@ -20,9 +20,9 @@
         <p>Fields marked with an asterisk (*) are required.</p>
         <div>
           <h2>Your name</h2>
-          <input name="name" placeholder="Your name" type="text" required>
+          <input name="name" id= "name" placeholder="Your name" type="text" required>
           <h2>Photo (URL link)</h2>
-          <input name="photoUrl" placeholder="http:// ..." type="url" required>
+          <input name="photoUrl" id= "photoUrl" placeholder="http:// ..." type="url" required>
         </div>
         <div>
           <h2>Q1: You prefer to code in a public place like a coffee shop</h2>
@@ -122,6 +122,37 @@
       </form>
     </div>
   </section>
-  <script> </script>
+  
 </body>
 </html>
+
+<script type="text/javascript"> 
+    $("#submitBtn").on("click", function(e){
+      e.preventDefault();
+      //capture user's info from survey.
+      var newFriend = {
+        name: $("#name").val().trim(),
+        photoUrl: $("#photoUrl").val().trim(),
+        scores: [
+          $('#question1').val(),
+          $('#question2').val(),
+          $('#question3').val(),
+          $('#question4').val(),
+          $('#question5').val(),
+          $('#question6').val(),
+          $('#question7').val(),
+          $('#question8').val(),
+          $('#question9').val(),
+          $('#question10').val()
+      ]};
+
+      $.post("/api/friends", newFriend, function(){
+        alert("your data has been saved");
+      });
+
+      
+      console.log(newFriend);
+    });
+  
+  
+  </script>
