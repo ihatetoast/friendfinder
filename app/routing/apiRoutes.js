@@ -12,7 +12,11 @@ module.exports = function(app) {
   // API POST Requests
   //will need to get the current list of friends and do the math BEFORE i push user's data; otherwise, i'll give user itself as a match. ... although that can sometimes be best. todo: introverted friend finder
   app.post("/api/friends", function(req, res) {
-    res.json(req.body);
+    var newUserData = req.body;
+    var newUserName = newUserData.name;
+    var newUserPic = newUserData.photoUrl;
+    var newUserScores = newUserData.scores;
+
     //token pairedProgrammer
     //generic name and photo. score at 55, which would be beaten with any score. Gives something to compare to. 0 would rarely be beaten.
     let pairedProgrammer = {
@@ -29,11 +33,11 @@ User 1: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
 User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
 Total Difference: 2 + 1 + 2 = 5
 Remember to use the absolute value of the differences. */
+console.log(`current devDiff: ${pairedProgrammer.devDiff}`);
+console.log(`current user: ${newUserData.scores}`);
     friendsData.forEach(function(friend){
       console.log(`${friend.name}: scores ${friend.scores}`);
-      for(var i = 0; i < friend.scores.length; i++){
-        
-      }
+      
     })
     console.log("wreck body:");
     console.log(req.body);

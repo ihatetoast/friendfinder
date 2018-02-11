@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <meta http-equiv="X-UA-Compatible" content="ie=edge" >
   <title>Double Data: Survey</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
     
-  <header>
+  <header class="jumbotron">
     <h1>DoubleData</h1>
     <h4>Helping developers find each other because pair programming is best.</h4>
   </header>
   <section>
     <div class="survey">
-      <form action="">
         <legend>Survey</legend>
         <p>Fields marked with an asterisk (*) are required.</p>
         <div>
           <h2>Your name</h2>
-          <input name="name" class="inputFields" id= "name" placeholder="Your name" type="text" required>
+          <input name="name" class="inputFields form-control" id= "name" placeholder="Your name" type="text" required>
           <h2>Photo (URL link)</h2>
-          <input name="photoUrl" class="inputFields" id= "photoUrl" placeholder="http:// ..." type="url" required>
+          <input name="photoUrl" class="inputFields form-control" id= "photoUrl" placeholder="http:// ..." type="url" required>
         </div>
         <div>
           <h2>Q1: You prefer to code in a public place like a coffee shop</h2>
-          <select class="dropDowns" id="question1">
-            <option></option>
+          <select class="dropDowns form-control" id="question1">
+            <option value=""></option>
             <option value="1">1 (Yes! My house is distracting)</option>
             <option value="2">2</option>
             <option value="3">3 (Sometimes)</option>
@@ -35,8 +35,8 @@
             <option value="5">5 (No. I code on the couch.)</option>
           </select> 
           <h2>Q2: You are not afraid of commitment when it comes to GitHub.</h2>
-          <select class="dropDowns" id="question2">
-              <option></option>
+          <select class="dropDowns form-control" id="question2">
+              <option value=""></option>
               <option value="1">1 (I'm a mean green committing machine!)</option>
               <option value="2">2</option>
               <option value="3">3 (When I remember)</option>
@@ -44,8 +44,8 @@
               <option value="5">5 (It's on my laptop. That's good enough.)</option>
           </select> 
           <h2>Q3: You go to StackOverflow for some help, but find the comments full of self-righteous jackasses.</h2>
-          <select class="dropDowns" id="question3">
-              <option></option>
+          <select class="dropDowns form-control" id="question3">
+              <option value=""></option>
               <option value="1">1 (Yes. The arrogance is painful.)</option>
               <option value="2">2</option>
               <option value="3">3 (I never read comments.)</option>
@@ -53,8 +53,8 @@
               <option value="5">5 (No. I'm kind of an ass myself.)</option>
             </select>
           <h2>Q4: You prefer React to Angular.</h2>
-          <select class="dropDowns" id="question4">
-            <option></option>
+          <select class="dropDowns form-control" id="question4">
+            <option value=""></option>
             <option value="1">1 (Frankie says REACT!)</option>
             <option value="2">2</option>
             <option value="3">3 (Meh. I prefer VueJS.)</option>
@@ -62,8 +62,8 @@
             <option value="5">5 (Wham bam bAngular!)</option>
           </select> 
           <h2>Q5: You prefer to style your own over relying on Bootstrap.</h2>
-          <select class="dropDowns" id="question5">
-            <option></option>
+          <select class="dropDowns form-control" id="question5">
+            <option value=""></option>
             <option value="1">1 (Yes. I love being in control.)</option>
             <option value="2">2</option>
             <option value="3">3 (I take what I need.)</option>
@@ -71,8 +71,8 @@
             <option value="5">5 (Cut and paste me, and call me Shirley.)</option>
           </select> 
           <h2>Q6: You enjoy daily coding challenges.</h2>
-          <select class="dropDowns" id="question6">
-            <option></option>
+          <select class="dropDowns form-control" id="question6">
+            <option value=""></option>
             <option value="1">1 (I love them!)</option>
             <option value="2">2</option>
             <option value="3">3 (Meh.)</option>
@@ -80,8 +80,8 @@
             <option value="5">5 (They feel restrictive.)</option>
           </select> 
           <h2>Q7: You have interests outside of the terminal.</h2>
-          <select class="dropDowns" id="question7">
-            <option></option>
+          <select class="dropDowns form-control" id="question7">
+            <option value=""></option>
             <option value="1">1 (Yes! I'm multifaceted.)</option>
             <option value="2">2</option>
             <option value="3">3 (Some.)</option>
@@ -89,8 +89,8 @@
             <option value="5">5 (Terminal is life.)</option>
           </select>
           <h2>Q8: You keep up by listening to podcasts and reading online posts on sites like Medium.</h2>
-          <select class="dropDowns" id="question8">
-            <option></option>
+          <select class="dropDowns form-control" id="question8">
+            <option value=""></option>
             <option value="1">1 (Definitely. Those are my peeps.)</option>
             <option value="2">2</option>
             <option value="3">3 (No opinion)</option>
@@ -98,8 +98,8 @@
             <option value="5">5 (If I'm reading or listening, I'm not coding.)</option>
           </select> 
           <h2>Q9: You sometimes go to Meetups for the food.</h2>
-          <select class="dropDowns" id="question9">
-            <option></option>
+          <select class="dropDowns form-control" id="question9">
+            <option value=""></option>
             <option value="1">1 (I judge groups by their food options.)</option>
             <option value="2">2</option>
             <option value="3">3 (Only if it's pizza.)</option>
@@ -107,8 +107,8 @@
             <option value="5">5 (I'm there for schmoozing, and I can't schmooze greasy.)</option>
           </select>
           <h2>Q10: You wish that "open source" didn't sound so much like "open sores".</h2>
-          <select class="dropDowns" id="question10">
-            <option></option>
+          <select class="dropDowns form-control" id="question10">
+            <option value=""></option>
             <option value="1">1 (Yes. Drives me nuts.)</option>
             <option value="2">2</option>
             <option value="3">3 (Never noticed.)</option>
@@ -117,18 +117,15 @@
           </select>
         </div>
         <div>
-          <button type="submit" id="submitBtn">Find a dev</button>
+          <button type="submit" class="btn btn-default" id="submitBtn">Find a dev</button>
         </div>
-      </form>
     </div>
   </section>
-  
 </body>
 </html>
 
 <script type="text/javascript"> 
-  $("#submitBtn").on("click", function(e){
-    e.preventDefault();
+  $("#submitBtn").on("click", function(){
       //validate twice: required? at input (inputFields) and at dropdown(dropDowns)
       //return true. start with true so false msg can be given
       //if true, capture data, move on.
@@ -153,31 +150,20 @@
       // var currentURL = window.location.origin;
     if(validateSurvey()===true){
       //capture user's info from survey.
-      var newFriend = {
-        name: $("#name").val().trim(),
-        photoUrl: $("#photoUrl").val().trim(),
-        scores: [
-          $('#question1').val(),
-          $('#question2').val(),
-          $('#question3').val(),
-          $('#question4').val(),
-          $('#question5').val(),
-          $('#question6').val(),
-          $('#question7').val(),
-          $('#question8').val(),
-          $('#question9').val(),
-          $('#question10').val()
-        ]
-      };//end newFriend how sad
+        var newFriend = {
+          name: $("#name").val().trim(),
+          photoUrl: $("#photoUrl").val().trim(),
+          scores: [$('#question8').val()]
+        };//end newFriend how sad
       //form is complete. send it to server
       //use window.location.origin for heroku
+      
       var currentURL = window.location.origin;
-      $.post(currentURL+"/api/friends", newFriend, function(){
-        alert(`Thank you, ${newFriend.name}. Your survey has been submitted.`);
-        console.log(newFriend);
-      });//end post
-    }//end if formCompleted
-    else {
+        $.post(currentURL+"/api/friends", newFriend, function(){
+          alert(`Thank you, ${newFriend.name}. Your survey has been submitted.`);
+          console.log(newFriend);
+        });//end post
+       }else {
       alert(`Oops. You've not completed the form or answered all of the questions.`);
     }
     return false;
