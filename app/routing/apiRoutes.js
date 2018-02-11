@@ -32,12 +32,13 @@ var friendsData = require("../data/friends");
 module.exports = function(app) {
   // API GET Requests
   app.get("/api/friends", function(req, res) {
+    //get array of friends array first to do the calc
     res.json(friendsData);
   });
 
   // API POST Requests
-  // app.post("/api/friends", function(req, res) {
-  //   res.json("you have sent to the friends api");
-  //   //logic of match making
-  // }); 
+  app.post("/api/friends", function(req, res) {
+    res.json("you have sent to the friends api");
+    //logic of match making
+  }); 
 };
