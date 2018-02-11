@@ -21,11 +21,6 @@ app.post('/api/friends', function(req, res){
 })
 
 
-
-
-
-
-
 app.listen(PORT, function() {
   console.log("Friend finder is listening on " + PORT);
 });
