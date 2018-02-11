@@ -16,7 +16,11 @@ app.use(bodyParser.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-app.post('/api/friends')
+app.post('/api/friends', function(req, res){
+  res.json(req.body);
+})
+
+
 
 
 

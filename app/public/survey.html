@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <meta http-equiv="X-UA-Compatible" content="ie=edge" >
   <title>Double Data: Survey</title>
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
     
@@ -89,7 +86,7 @@
             <option value="2">2</option>
             <option value="3">3 (Some.)</option>
             <option value="4">4</option>
-            <option value="5">5 (Teminal is life.)</option>
+            <option value="5">5 (Terminal is life.)</option>
           </select>
           <h2>Q8: You keep up by listening to podcasts and reading online posts on sites like Medium.</h2>
           <select class="dropDowns" id="question8">
@@ -137,28 +134,24 @@
       //if true, capture data, move on.
       //else alert.
     function validateSurvey(){
-      let formCompleted = true;
+      var formCompleted = true;
       //iterate over two inputFields. 
       $('.inputFields').each(function(){
-        if(($this).val() === ''){
-          alert(`You have left ${$(this)} empty`)
+        if($(this).val() === ''){
           formCompleted = false;
         }//if 
       });//inputFields
+      //iterate over two dropdowns. 
       $('.dropDowns').each(function(){
-        if($(this).val ===''){
-          alert(`You have left ${$(this)} empty`)
+        if($(this).val() ===''){
           formCompleted = false;
         }//if
       });//dropDowns
       return formCompleted;
     };//end survey validation: validateSurvey
       
-
-
       // var currentURL = window.location.origin;
-    if(formCompleted){
-      var currentURL = window.location.origin;
+    if(validateSurvey()===true){
       //capture user's info from survey.
       var newFriend = {
         name: $("#name").val().trim(),
@@ -176,13 +169,18 @@
           $('#question10').val()
         ]
       };//end newFriend how sad
+      //form is complete. send it to server
+      //use window.location.origin for heroku
+      var currentURL = window.location.origin;
       $.post(currentURL+"/api/friends", newFriend, function(){
-        alert("your data has been saved");
-      });
-
-      
-      console.log(newFriend);
-    };//end if formCompleted
+        alert(`Thank you, ${newFriend.name}. Your survey has been submitted.`);
+        console.log(newFriend);
+      });//end post
+    }//end if formCompleted
+    else {
+      alert(`Oops. You've not completed the form or answered all of the questions.`);
+    }
+    return false;
   });//end "#submitBtn" on "click"
   
 </script>
