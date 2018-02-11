@@ -14,8 +14,10 @@
     <h1>DoubleData</h1>
     <h4>Helping developers find each other because pair programming is best.</h4>
   </header>
+  
   <section>
     <div class="survey">
+      <form action="">
         <legend>Survey</legend>
         <p>Fields marked with an asterisk (*) are required.</p>
         <div>
@@ -117,56 +119,61 @@
           </select>
         </div>
         <div>
-          <button type="submit" class="btn btn-default" id="submitBtn">Find a dev</button>
+          <button type="submit" class="btn btn-lg btn-block" id="submitBtn">
+            Find a dev
+          </button>
         </div>
+      </form>
     </div>
   </section>
 </body>
 </html>
 
-<script type="text/javascript"> 
-  $("#submitBtn").on("click", function(){
-      //validate twice: required? at input (inputFields) and at dropdown(dropDowns)
-      //return true. start with true so false msg can be given
-      //if true, capture data, move on.
-      //else alert.
+<script type="text/javascript">
+  $("#submitBtn").on("click", function(e){
+    e.preventDefault();
     function validateSurvey(){
       var formCompleted = true;
       //iterate over two inputFields. 
       $('.inputFields').each(function(){
         if($(this).val() === ''){
           formCompleted = false;
-        }//if 
+        }
       });//inputFields
-      //iterate over two dropdowns. 
       $('.dropDowns').each(function(){
-        if($(this).val() ===''){
+        if($(this).val() === ''){
           formCompleted = false;
-        }//if
+        }
       });//dropDowns
       return formCompleted;
-    };//end survey validation: validateSurvey
-      
-      // var currentURL = window.location.origin;
+    };//end validateSurvey
+
     if(validateSurvey()===true){
-      //capture user's info from survey.
-        var newFriend = {
-          name: $("#name").val().trim(),
-          photoUrl: $("#photoUrl").val().trim(),
-          scores: [$('#question8').val()]
-        };//end newFriend how sad
-      //form is complete. send it to server
-      //use window.location.origin for heroku
-      
+      var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photoUrl").val().trim(),
+        scores: [
+        $('#question1').val(), 
+        $('#question2').val(), 
+        $('#question3').val(), 
+        $('#question4').val(), 
+        $('#question5').val(), 
+        $('#question6').val(), 
+        $('#question7').val(), 
+        $('#question8').val(), 
+        $('#question9').val(), 
+        $('#question10').val()
+        ]
+      }
+      alert(`Thank you, ${newFriend.name}. Your survey is completed`);
+      console.log(newFriend);
       var currentURL = window.location.origin;
-        $.post(currentURL+"/api/friends", newFriend, function(){
-          alert(`Thank you, ${newFriend.name}. Your survey has been submitted.`);
-          console.log(newFriend);
-        });//end post
-       }else {
-      alert(`Oops. You've not completed the form or answered all of the questions.`);
+      $.post(currentURL+"/api/friends", newFriend, function(){
+
+        console.log(newFriend);
+      });//end post
+    } else {
+      console.log("survey NOT completed");
     }
-    return false;
-  });//end "#submitBtn" on "click"
-  
+  });
 </script>
