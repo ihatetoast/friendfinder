@@ -12,14 +12,13 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
+//V?
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
 app.post('/api/friends', function(req, res){
   res.json(req.body);
 })
-
 
 app.listen(PORT, function() {
   console.log("Friend finder is listening on " + PORT);

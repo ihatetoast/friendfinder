@@ -40,7 +40,7 @@
 //     runningDiff = 0;
 //     //iterate now over the scores BUT COMPARE one score at a time. comparing only 1 index at a time, so scores at current index
 //    //friendsData[where we are in first loop].scores[where index is at nested loop]
-//     for(let k = 0; k < friendsData[i].scores[k]; k++){
+//     for(let k = 0; k < friendsData[i].scores[k].length; k++){
 //        //accumulate the absval of each index current user then friendsData
 //       runningDiff += Math.abs(parseInt(userScores[k]) - parseInt(friendsData[i].scores[j]));
 
