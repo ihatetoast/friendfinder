@@ -75,6 +75,9 @@ footer {
       .buttonHolder button {
         width: 50%; } }
 
+.survey-questions h2 {
+  font-size: 1.2em; }
+
 #pairedProgrammerModal {
   display: none;
   position: fixed;
@@ -87,8 +90,8 @@ footer {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
-  /* 15% from the top and centered */
+  margin: 5% auto;
+  /* 5% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 50%; }

@@ -15,25 +15,25 @@
   
   
 </head>
-<body>
+<body class="site">
     
   <header class="jumbotron">
     <h1>DoubleData</h1>
     <h4>Helping developers find each other because pair programming is best.</h4>
   </header>
   
-  <section>
+  <main class="site-content main-content">
     <div class="survey">
       <form action="">
         <legend>Survey</legend>
         <p>Fields marked with an asterisk (*) are required.</p>
-        <div>
+        <div class="survey-questions">
           <h2>Your name</h2>
           <input name="name" class="inputFields form-control" id= "name" placeholder="Your name" type="text" required>
           <h2>Photo (URL link)</h2>
           <input name="photoUrl" class="inputFields form-control" id= "photoUrl" placeholder="http:// ..." type="url" required>
         </div>
-        <div>
+        <div class="survey-questions">
           <h2>Q1: You prefer to code in a public place like a coffee shop</h2>
           <select class="dropDowns form-control" id="question1">
             <option value=""></option>
@@ -125,14 +125,14 @@
             <option value="5">5 (No. I only know people who speak clearly.)</option>
           </select>
         </div>
-        <div>
+        <div class="buttonHolder">
           <button type="submit" class="btn btn-lg btn-block" id="submitBtn">
             Find a dev
           </button>
         </div>
       </form>
     </div>
-  </section>
+  </main>
   <!-- Modal -->
   <div id="pairedProgammerModal" class="modal">
 
@@ -140,7 +140,6 @@
     <div class="modal-content">
       <span id="close">&times;</span>
       <p>Name: <span id="pairProgName"></span></p>
-      <p>Photo:</p>
       <img id="pairProgImg" src="http://mediad.publicbroadcasting.net/p/wnpr/files/styles/x_large/public/201602/1491_Henry_VIII.jpg" alt="head shot">
     </div>
   </div>

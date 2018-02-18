@@ -18,9 +18,9 @@ module.exports = function(app) {
 		let userName = userData.name;
 		let userPhoto = userData.photo;
     let userScores = userData.scores;
-    console.log(userScores);
-    console.log("wreck body:");
-    console.log(req.body);
+    // console.log(userScores);
+    // console.log("wreck body:");
+    // console.log(req.body);
     //captures the result of absval algorithm.
     let pairedProgrammer = {
       name: '',
@@ -30,19 +30,16 @@ module.exports = function(app) {
     let runningDiff;
     
     //iterate over friendsData THEN iterate over friendsData.scores
-    console.log(`current devDiff: ${pairedProgrammer.devDiff}`);
-  
 //friendsData from get request. go over each possible friend:
 //keep track of friend and user index. 
   for(let i = 0; i < programmers.length; i ++){
     runningDiff = 0;
     //iterate over scores at position
-    console.log(`this name is ${programmers[i].name}`);
     for(let k = 0; k < userScores.length; k++){
        //rundif+= |userscore at k index| - |programmer at i scores at k index|
       runningDiff += Math.abs(userScores[k] - programmers[i].scores[k]);
     }
-    console.log(`Running difference is now ${runningDiff}`);
+    // console.log(`Running difference is now ${runningDiff}`);
     if(runningDiff <= pairedProgrammer.devDiff){
       pairedProgrammer.name = programmers[i].name;
       pairedProgrammer.photo = programmers[i].photo;

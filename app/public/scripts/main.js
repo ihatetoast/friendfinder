@@ -9,6 +9,7 @@ $("#submitBtn").on("click", function(e){
     $('.inputFields').each(function(){
       if($(this).val() === ''){
         formCompleted = false;
+  
       }
     });//inputFields
     $('.dropDowns').each(function(){
@@ -37,17 +38,14 @@ $("#submitBtn").on("click", function(e){
       ]
     }
     alert(`Thank you, ${newFriend.name}. Your survey is completed`);
-    console.log(newFriend);
     var currentURL = window.location.origin;
     $.post(currentURL+"/api/friends", newFriend, function(data){
-
-      console.log(newFriend);
       $("#pairProgName").text(data.name);
       $('#pairProgImg').attr("src", data.photo);
       modal.style.display = "block";
     });//end post
   } else {
-    console.log("survey NOT completed");
+    alert("Our elite pool of programmers are paired only with those who know how to fill out a survey completely. Try again, Karen.");
   }
   ex.onclick = function() {
     modal.style.display = "none";
