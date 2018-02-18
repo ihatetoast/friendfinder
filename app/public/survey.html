@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <meta http-equiv="X-UA-Compatible" content="ie=edge" >
   <title>Double Data: Survey</title>
-  <link rel="stylesheet" type="text/css" href="../styles/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded|Inconsolata" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- path to my own stylesheet -->
-  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
 
   <script src="https://code.jquery.com/jquery.js"></script>
   
@@ -138,71 +139,18 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span id="close">&times;</span>
-      <p>Name: Henry</p>
+      <p>Name: <span id="pairProgName"></span></p>
       <p>Photo:</p>
-      <img src="http://mediad.publicbroadcasting.net/p/wnpr/files/styles/x_large/public/201602/1491_Henry_VIII.jpg" alt="">
+      <img id="pairProgImg" src="http://mediad.publicbroadcasting.net/p/wnpr/files/styles/x_large/public/201602/1491_Henry_VIII.jpg" alt="head shot">
     </div>
   </div>
-  <script type="text/javascript">
-    const modal = document.getElementById('pairedProgammerModal');
-    const ex = document.getElementById('close');
-    $("#submitBtn").on("click", function(e){
-      e.preventDefault();
-      function validateSurvey(){
-        var formCompleted = true;
-        //iterate over two inputFields. 
-        $('.inputFields').each(function(){
-          if($(this).val() === ''){
-            formCompleted = false;
-          }
-        });//inputFields
-        $('.dropDowns').each(function(){
-          if($(this).val() === ''){
-            formCompleted = false;
-          }
-        });//dropDowns
-        return formCompleted;
-      };//end validateSurvey
-  
-      if(validateSurvey()===true){
-        var newFriend = {
-          name: $("#name").val().trim(),
-          photo: $("#photoUrl").val().trim(),
-          scores: [
-          $('#question1').val(), 
-          $('#question2').val(), 
-          $('#question3').val(), 
-          $('#question4').val(), 
-          $('#question5').val(), 
-          $('#question6').val(), 
-          $('#question7').val(), 
-          $('#question8').val(), 
-          $('#question9').val(), 
-          $('#question10').val()
-          ]
-        }
-        alert(`Thank you, ${newFriend.name}. Your survey is completed`);
-        console.log(newFriend);
-        var currentURL = window.location.origin;
-        $.post(currentURL+"/api/friends", newFriend, function(){
-  
-          console.log(newFriend);
-          modal.style.display = "block";
-        });//end post
-      } else {
-        console.log("survey NOT completed");
-      }
-      ex.onclick = function() {
-        modal.style.display = "none";
-      };
-      window.onclick = function(e) {
-      if (e.target == modal) {
-        modal.style.display = "none";
-      }
-}
-    });
-  
-  </script>
+  <footer>
+      <p> <a href="https://github.com/ihatetoast/friendfinder" target="_blank">Katy Cassidy</a> | 
+        <a href="http://www.ihatetoast.com" target="_blank">ihatetoast</a> | 
+        <a href="/api/friends">allthefriends</a></p>
+    </footer>
+  <script src="./scripts/main.js"></script>
+
 </body>
 </html>
 

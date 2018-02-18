@@ -1,35 +1,125 @@
-img{
-  width: 200px;
-}
-.jumbotron {
-  background-color: blue;
-}
-/* The Modal (background) */
-#pairedProgrammerModal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+//variables: 
+/* RGB */
+$wine: rgba(115, 77, 98, 1);
+$white: rgba(183, 197, 198, 1);
+$black: rgba(17, 21, 23, 1);
+$sky: rgba(132, 158, 169, 1);
+$slate: rgba(92, 113, 126, 1);
+$papaya: rgba(247, 183, 102, 1);
+$title: 'BioRhyme Expanded';
+$text: 'Inconsolata';
+* {
+  box-sizing: border-box;
 }
 
-/* Modal Content/Box */
+a {
+  color: $slate;
+  &:hover{
+    color: $papaya;
+  }
+}
+
+//STICKY FOOTA
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.site-content {
+  flex: 1;
+}
+//INDEX SURVEY
+.jumbotron {
+  background-color: $wine;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  padding: 0 2em;
+  h1 {
+    font-size:2em;
+    color: $papaya;
+    font-family: $title, serif;
+    @media screen and (min-width: 768px){
+      font-size:3em;
+    }
+  }
+  h4{
+    color: $papaya;
+    font-size:1.3em;
+    font-family: $text, sans-serif;
+    @media screen and (min-width: 768px){
+      font-size:2em;
+    }
+  }
+}
+footer {
+  background-color: $wine;
+  color: $papaya;
+  display:flex;
+  justify-content: center;
+}
+//MAIN LANDING PAGE
+.main-content{
+  align-items: center;
+  background-color: $white;
+  display:flex;
+  flex-direction: column;
+  padding: 1em 2em;
+  @media screen and (min-width: 768px){
+    padding: 2em 4em;
+  }
+  @media screen and (min-width: 920px){
+    padding: 4em;
+  }
+}
+.intro {
+    font-family: $text, sans-serif;
+    font-size: 1.5em;
+  }
+.buttonHolder{
+  margin-top: 2em;
+  width: 100%;
+  text-align: center;
+  button{
+    background: $slate;
+    color: #fefefe;
+    font-family: $title, serif;
+    height: 5em;
+    border-radius: 20px;
+    width: 100%;
+    @media screen and (min-width: 768px){
+      width: 50%;
+    }
+
+  }
+}
+//MODAL
+#pairedProgrammerModal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    // width: 25%; 
+    // height: 100%;
+    overflow: auto;
+    background-color: $black; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%;
 }
-
-/* The Close Button */
+img{
+  width: 80%;
+}
 #close {
-    color: #aaa;
+    color: $sky;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -37,7 +127,7 @@ img{
 
 #close:hover,
 #close:focus {
-    color: black;
+    color:$black;
     text-decoration: none;
     cursor: pointer;
 }

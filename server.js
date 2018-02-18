@@ -1,6 +1,7 @@
 // DEPENDENCIES
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require('path');
 
 
 // EXPRESS CONFIGURATION
@@ -14,7 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 
-//V?
+app.use(express.static('public'));
+app.use('/scripts', express.static(path.join(__dirname, 'app/public/scripts')));
+app.use('/css', express.static(path.join(__dirname, 'app/public/css')));
+//
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
