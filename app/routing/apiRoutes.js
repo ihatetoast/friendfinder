@@ -19,7 +19,8 @@ module.exports = function(app) {
 		let userPhoto = userData.photo;
     let userScores = userData.scores;
     console.log(userScores);
-
+    console.log("wreck body:");
+    console.log(req.body);
     //captures the result of absval algorithm.
     let pairedProgrammer = {
       name: '',
@@ -36,9 +37,8 @@ module.exports = function(app) {
   for(let i = 0; i < programmers.length; i ++){
     runningDiff = 0;
     //iterate over scores at position
-    console.log(`this name is ${programmers[i]}.name`);
+    console.log(`this name is ${programmers[i].name}`);
     for(let k = 0; k < userScores.length; k++){
-       //accumulate the absval of each index current user then friendsData
        //rundif+= |userscore at k index| - |programmer at i scores at k index|
       runningDiff += Math.abs(userScores[k] - programmers[i].scores[k]);
     }
@@ -49,8 +49,8 @@ module.exports = function(app) {
       pairedProgrammer.devDiff = runningDiff;
     }
   }
-    console.log("wreck body:");
-    console.log(req.body);
-    programmers.push(req.body);
+    programmers.push(userData);
+    // console.log(pairedProgrammer);
+    res.json(pairedProgrammer);
   }); 
 };
