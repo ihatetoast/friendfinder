@@ -46,12 +46,12 @@ var friendsArr = [
   },
   {
     "name":"Ada",
-    "photo":"https://metrouk2.files.wordpress.com/2013/10/ay95895977ada-lovelace-engl1.jpg?w=748&h=814&crop=1",
+    "photo":"https://www.history.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_250/MTU3ODc4Njg0MzE3NzIxOTI5/image-placeholder-title.webp",
     "scores":[1,5,4,3,2,3,4,1,5,3]
   },
   {
     "name":"Fibonacci",
-    "photo":"http://www.storyofmathematics.com/images2/fibonacci.jpg",
+    "photo":"https://www.library.ethz.ch/var/storage/images/media/images/leonardo-pisano/671616-1-ger-DE/Leonardo-Pisano_image_gallery.jpg",
     "scores":[1,1,2,3,5,1,1,2,3,5]
   },{
     "name": "Suggs",
